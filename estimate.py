@@ -12,7 +12,17 @@ class TestWallis(unittest.TestCase):
             pi = wallis(i)
             self.assertTrue(abs(pi - math.pi) < 0.01, msg=f"Estimate with even {i} iterations is {pi} which is not accurate enough.\n")
 
+def monte_carlo(n):
+        countCircle=0
+        for i in range(n):
+            x=randint(-1,+1)
+            y=randint(-1,+1)
+            r=pow(x,2)+pow(y,2)
 
+            if(r<1):
+                countCircle+=1
+        return 4*countCircle/(n)
+        
 class TestMC(unittest.TestCase):
     def test_randomness(self):
         pi0 = monte_carlo(15000)
