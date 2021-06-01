@@ -17,7 +17,7 @@ def monte_carlo(n):
         for i in range(n):
             x=randint(-1,+1)
             y=randint(-1,+1)
-            r=pow(x,2)+pow(y,2)
+            r=pow(pow(x,2)+pow(y,2),1/2)
 
             if(r<1):
                 countCircle+=1
